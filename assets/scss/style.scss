@@ -1,0 +1,178 @@
+/*
+Theme Name: Zero Credits
+Theme URI: http://underscores.me/
+Author: Alex Roode
+Author URI: http://pd/author
+Description: Site for credit offers
+Version: 1.0.0
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+@use './blocks/offer' as *;
+@charset "UTF-8";
+@import "./mixins";
+@import "./variables";
+@import "./fonts";
+
+/* ========= Обнуление =========*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    &::before, &::after {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        box-sizing: border-box;
+    }
+}
+:focus, :active {outline: none;}
+a {
+    &:focus, &:active {outline: none;}
+}
+a {
+    text-decoration: none;
+    &:visited, &:hover {
+        text-decoration: none;
+    }
+}
+ul li {list-style: none;}
+h1, h2, h3, h4, h5, h6 {font-weight: 400;}
+
+// === Dinamic fonts ===
+// .class {@include adaptiv-font(92, 42);}
+// .class {@include adaptiv-font(92, 42);}
+// .class {@include adaptiv-font(92, 42);}
+// .class {@include adaptiv-font(92, 42);}
+// .class {@include adaptiv-font(92, 42);}
+// .class {@include adaptiv-font(92, 42);}
+// .class {@include adaptiv-font(92, 42);}
+// .class {@include adaptiv-font(92, 42);}
+// .class {@include adaptiv-font(42, 30);}
+
+
+/* === -------------------- === */
+html, body {
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 16px;
+    height: 100%;
+}
+body {
+    max-width: 1920px;
+    background: $dark;
+    color: $light;
+    font-family: monospace,Times, serif;
+    font-size: 100%;
+    text-shadow: 1px 2px 3px #000;
+    margin: 0 auto;
+    &.lock {
+        overflow: hidden;
+    }
+}
+::-webkit-scrollbar {
+    width: 10px;
+    /* ширина всей полосы прокрутки */
+}
+::-webkit-scrollbar-track {
+    background: #002fff;
+    box-shadow: 0 0 3px 2px #002fff;
+    border-radius: 20px;
+    /*округлосьбегунка*/
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+    background: #ffee00;
+    /*цветбегунка*/
+    height: 25%;
+    border-radius: 20px;
+    /*округлосьбегунка*/
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border: 2px solid #002fff;
+}
+/* ========= Wrapper ========= */
+.wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    max-width: 1920px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+.container {
+    @include container;
+}
+/*======*======* HEADER *======*======*/
+.header {
+    position: relative;
+    flex: 0 0 auto;
+    background: $bg_gray;
+    max-height: 4.6875rem;
+    height: 100vh;
+    box-shadow: 0 -2px 12px #111;
+    .container {
+        @include flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+    .logo {
+        a {
+            position: relative;
+            transition: all .5s ease;
+            text-shadow: 5px 3px 7px #111;
+            strong {
+                font-family: '4';
+                font-size: 36px;
+                line-height: 40px;
+                color: $gold;
+            }
+            &:hover {
+                transition: all .5s ease;
+                text-shadow: 3px 2px 2px $tomato, 4px 3px 4px #000;
+            }
+        }
+    }
+}
+@import './blocks/menu';
+.burger {
+    display: none;
+}
+/*======*======* MAIN *======*======*/
+@import './blocks/hero';
+.main {
+    flex: 1 1 auto;
+    >.container {
+
+    }
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+}
+
+
+/*======*======* FOOTER *======*======*/
+.footer {
+    position: relative;
+    flex: 0 0 auto;
+    padding: 30px;
+    background: $bg_gray;
+    height: auto;
+    box-shadow: 0 -1px 12px $dark;
+    >.container {
+
+    }
+}
+
+// Media Queries
+@import "./responsive"; 

@@ -1,0 +1,29 @@
+@mixin flex {
+    display: flex;
+    position: relative;
+}
+@mixin grid {
+    display: grid;
+    position: relative;
+}
+@mixin block {
+    display: block;
+    position: relative;
+}
+@mixin container {
+    position: relative;
+    max-width: 1680px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+@mixin full_size {
+    width: 100%;
+    height: 100%;
+}
+$maxWidth: 1680;
+@mixin adaptiv-font($pcSize, $mobSize) {
+ $addSize: $pcSize - $mobSize;
+ $maxWidth: $maxWidth - 320;
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}

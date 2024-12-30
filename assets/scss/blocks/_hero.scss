@@ -1,0 +1,130 @@
+.hero {
+    padding: 50px 0;
+    position: relative;
+    
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: 20px; /* Промежуток между блоками */
+        width: 100%;
+        flex-wrap: wrap; /* Для мобильных будет в один столбец */
+    }
+    
+    &__text,
+    &__image {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    
+    // Блок с текстом
+    &__text {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        
+        .highlight {
+            color: #ff0000;
+            font-weight: bold;
+        }
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    
+    p {
+        font-size: 1rem;
+        color: #666;
+        max-width: 480px;
+    }
+    
+    // Блок с изображением
+    &__image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        gap: 20px;
+    }
+    
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%; /* Сделано, чтобы изображение заполнило контейнер */
+    }
+}
+
+// Для экранов больше 920px
+@media (min-width: 920px) {
+    .hero__content {
+        flex-direction: row; /* Блоки в одном ряду */
+        gap: 20px; /* Промежуток между блоками */
+    }
+    
+    &__text,
+    &__image {
+        width: calc(50% - 10px); /* Равная ширина для обоих блоков с учетом gap */
+        height: auto; /* Высота блоков динамическая в зависимости от содержимого */
+    }
+}
+
+// Для экранов 920px и меньше
+@media (max-width: 920px) {
+    .hero__content {
+        flex-direction: column; /* Один столбец */
+        align-items: center; /* Выравнивание по центру */
+    }
+    
+    &__text,
+    &__image {
+        width: 100%; /* Растягиваем на всю ширину */
+    }
+}
+}
+
+@keyframes move-heart {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(var(--moveX), var(--moveY));
+    }
+  }
+  
+  @keyframes pulse-heart {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  .hearts-animation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  
+    .heart {
+      position: absolute;
+      will-change: transform, opacity;
+      animation: move-heart 10s infinite linear, pulse-heart 2s infinite ease-in-out;
+    }
+  }
+  

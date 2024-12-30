@@ -1,0 +1,134 @@
+// Media Queries
+
+@media (max-width: 1440px) {
+
+}
+
+@media (max-width: 1152px) {
+
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
+    }
+    .main {
+        flex-direction: column;
+    }
+    .header {
+        .menu {
+            display: flex;
+            position: fixed;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            top: 75px;
+            z-index: 99;
+            visibility: hidden;
+            opacity: 0;
+            padding: 20px 30px 20px;
+            background: url('/assets/img/bg_pattern/gray-bg.webp');
+            transition: all 0.5s ease-in-out;
+            transform: translateY(10%);
+            li {
+                margin: 10px 0;
+                &:last-child {
+                    margin: 10px 0 0 0;
+                }
+                a { font-size: xx-large;}
+                .submenu {
+                    opacity: 1;
+                    visibility: visible;
+                    position: relative;
+                    align-items: center;
+                    transform: translateY(0);
+                    padding: 0 0 10px 0;
+                }
+                &.show {
+                    @include flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            &.active {
+                top: 75px;
+                width: 100%;
+                height: calc(100vh - 100px);
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                border-radius: 0;
+            }
+        }
+        .burger {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            width: 30px;
+            height: 26px;
+            margin: 0 15px 0 0;
+            right: 0;
+            /* top: 50%; */
+            cursor: pointer;
+            z-index: 999;
+            /* overflow: hidden; */
+            &.active .burger__line {
+                height: 0;
+                &::before {
+                    content: "";
+                    top: 0;
+                    transform: rotate(45deg);
+                }
+                &::after {
+                    content: "";
+                    top: 0;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        .burger__line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: $light;
+            &::before, &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background: $light;
+            }
+            &::before {
+                top: -10px;
+            }
+            &::after {
+                top: 10px;
+            }
+        }
+    }
+    .main > .container {
+        padding: 5px 5px 30px 5px;
+    }
+}
+
+@media (max-width: 920px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 640px) {
+
+}
+
+@media (max-width: 536px) {
+
+}
+
+@media (max-width: 425px) {}
