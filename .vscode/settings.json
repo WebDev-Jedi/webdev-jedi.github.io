@@ -1,0 +1,23 @@
+{
+    "[scss]": {
+        "editor.defaultFormatter": "vscode-scss-formatter"
+    },
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.autoprefix": true,
+    "liveSassCompile.settings.formats":[
+        // This is Default.
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/assets/css",
+        },
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/",
+        },
+    ],
+    "liveServer.settings.multiRootWorkspaceName": "Zerocredit.pp.ua",
+    "better-comments.multilineComments": true,
+    "editor.wordWrap": "on",
+}
