@@ -1,0 +1,18 @@
+{
+    "[scss]": {
+        "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+    },
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.autoprefix": false,
+    "liveSassCompile.settings.formats": [
+        // This is Default.
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/assets/css/",
+        },
+    ],
+    "liveServer.settings.multiRootWorkspaceName": "My Portfolio",
+    "better-comments.multilineComments": true,
+    "editor.wordWrap": "on"
+}

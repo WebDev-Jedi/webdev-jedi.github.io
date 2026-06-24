@@ -1,0 +1,22 @@
+/* --- CSS VARIABLES & THEME --- */
+:root {
+    --bg-dark: #0a1116;
+    --bg-card: #131e24;
+    --accent: #00f2fe;
+    --accent-glow: rgba(0, 242, 254, 0.25);
+    --text-main: #e2e8f0;
+    --text-muted: #718096;
+    --text-dim: #4a5568;
+    --white: #ffffff;
+    --font-main: "Plus Jakarta Sans", sans-serif;
+
+    /* Tech Colors */
+    --html-color: #e44d26;
+    --css-color: #264de4;
+    --js-color: #f7df1e;
+    --react-color: #61dafb;
+    --node-color: #339933;
+    --ts-color: #3178c6;
+    --next-color: #ffffff;
+    --tailwind-color: #06b6d4;
+}
