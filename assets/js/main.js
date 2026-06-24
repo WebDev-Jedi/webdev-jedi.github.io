@@ -1,10 +1,10 @@
 // 1. Mobile Navbar Toggle
-const menuBtn = document.getElementById('menu-btn');
-const navbar = document.querySelector('.navbar');
-menuBtn.addEventListener('click', () => {
-    navbar.classList.toggle('active');
-    menuBtn.querySelector('i').classList.toggle('bx-x');
-});
+// const menuBtn = document.getElementById('menu-btn');
+// const navbar = document.querySelector('.navbar');
+// menuBtn.addEventListener('click', () => {
+//     navbar.classList.toggle('active');
+//     menuBtn.querySelector('i').classList.toggle('bx-x');
+// });
 
 // 2. Shrink Header on Scroll
 window.addEventListener('scroll', () => {
