@@ -1,10 +1,10 @@
 // Smoose Scroll
-$('a[href*="#"]').on('click', function() {
-	$('html, body').animate({
-		scrollTop: $($.attr(this, 'href')).offset().top - 100
-	}, 3000);
-	return false;
-});
+// $('a[href*="#"]').on('click', function() {
+// 	$('html, body').animate({
+// 		scrollTop: $($.attr(this, 'href')).offset().top - 100
+// 	}, 3000);
+// 	return false;
+// });
 
 // Stiky Menu
 $(document).ready(function($){
