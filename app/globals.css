@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Artistamp_Medium", "Special Elite", cursive, fantasy, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:root {
+  /* Carbon dark theme is default */
+  --color-stone-950-raw: #0c0a09;
+  --grid-bg-opacity: 0.02;
+  --glow-opacity: 0.15;
+  --glow-hover-opacity: 0.35;
+}
+
+:root.theme-light {
+  /* Dynamic tailwind-v4 theme color swapping */
+  --color-stone-950: #fafaf9; /* Lighter background */
+  --color-stone-900: #ffffff; /* Card background */
+  --color-stone-800: #e7e5e4; /* Light border */
+  --color-stone-700: #d6d3d1; /* Medium border */
+  --color-stone-600: #a8a29e;
+  --color-stone-500: #78716c; /* Medium-dark text */
+  --color-stone-400: #57534e; /* Darker text */
+  --color-stone-300: #292524;
+  --color-stone-200: #1c1917; /* Very dark text */
+  --color-stone-100: #0c0a09; /* Near black text */
+  --color-stone-50: #000000;
+
+  --color-stone-950-raw: #fafaf9;
+  --grid-bg-opacity: 0.05;
+  --glow-opacity: 0.08;
+  --glow-hover-opacity: 0.18;
+}
+
+@layer utilities {
+  /* Carbon fiber / grid background */
+  .carbon-grid {
+    background-color: var(--color-stone-950-raw);
+    background-image: 
+      linear-gradient(rgba(234, 179, 8, var(--grid-bg-opacity)) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(234, 179, 8, var(--grid-bg-opacity)) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .mesh-gradient {
+    background: radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 100% 0%, rgba(234, 179, 8, 0.02) 0%, transparent 40%);
+  }
+
+  /* Custom Glow Shadows matching requested theme */
+  .glow-yellow {
+    box-shadow: 0 0 15px rgba(234, 179, 8, var(--glow-opacity));
+  }
+
+  .glow-yellow-hover:hover {
+    box-shadow: 0 0 25px rgba(234, 179, 8, var(--glow-hover-opacity));
+  }
+
+  .glow-turquoise {
+    box-shadow: 0 0 15px rgba(34, 211, 238, var(--glow-opacity));
+  }
+
+  .glow-turquoise-hover:hover {
+    box-shadow: 0 0 25px rgba(34, 211, 238, var(--glow-hover-opacity));
+  }
+
+  /* Custom text strokes and letter styling */
+  .text-shadow-custom {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(234, 179, 8, 0.1);
+  }
+}
+
+/* Base custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-stone-950);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-stone-800);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fbbf24;
+}
+

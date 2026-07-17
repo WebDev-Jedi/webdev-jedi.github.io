@@ -1,0 +1,6 @@
+{
+  "name": "Private Dating",
+  "description": "Private Dating offers portal: best proposals, dating news, catalog of photos and videos, and promotional offers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
